@@ -77,7 +77,6 @@ class Invite
      * 
      * @var const 
      */
-
     const NOT_DOWNLOADED = 5;
 
     /**
@@ -93,7 +92,7 @@ class Invite
     {
         if (null === $uid)
         {
-            $this->_uid = uniqid(rand(0, getmypid())) . "@ahmadamin.com";
+            $this->_uid = uniqid();
         }
         else
         {
@@ -662,7 +661,7 @@ class Invite
             //fix
             $time = date("Ymd\THis\Z", time());
             $content .= "CREATED:{$time}\n";
-            
+
             $content .= "DESCRIPTION:{$this->getDescription()}\n";
             $content .= "LAST-MODIFIED:{$this->getStart(true)}\n";
             $content .= "LOCATION:{$this->getLocation()}\n";
@@ -681,5 +680,3 @@ class Invite
     }
 
 }
-
-?>
